@@ -1,0 +1,5 @@
+_data/combined/*
+_data/templates_c/*
+_data/logs/*
+*.bak.php
+.idea
