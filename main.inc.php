@@ -3,7 +3,7 @@
 Plugin Name: Reisishot Login Security
 Version: 1.0
 Description: Improve login security using Google captcha
-Plugin URI: https://reisishot.pictures/
+Plugin URI: http://piwigo.org/ext/extension_view.php?eid=881
 Author: Florian Reisinger
 Author URI: https://github.com/reisi007
 */
@@ -21,7 +21,7 @@ function reisishot_login_js()
         $reisishot_js = file_get_contents("recaptcha.min.js", FILE_USE_INCLUDE_PATH);
 
         $template->append('head_elements', $reisishot_recaptcha);
-        $template->append('head_elements', '<script>var pk=' . $conf['recaptcha_public'] . ';' . $reisishot_js . '</script>');
+        $template->append('head_elements', '<script>var pk=\'' . $conf['recaptcha_public'] . '\';' . $reisishot_js . '</script>');
     }
 }
 
@@ -66,6 +66,4 @@ function reisishot_post_request($url, array $params)
     fclose($fp);
     return $result;
 }
-
-
 ?>
